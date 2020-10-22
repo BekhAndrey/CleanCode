@@ -25,8 +25,8 @@ public class ExperimentalPlane extends Plane{
         if (this == plane) return true;
         if (!(plane instanceof ExperimentalPlane)) return false;
         if (!super.equals(plane)) return false;
-        ExperimentalPlane that = (ExperimentalPlane) plane;
-        return experimentalType == that.experimentalType;
+        ExperimentalPlane currentPlane = (ExperimentalPlane) plane;
+        return experimentalType == currentPlane.experimentalType;
     }
 
     @Override

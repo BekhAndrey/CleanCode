@@ -36,14 +36,14 @@ public abstract class Plane {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Plane)) return false;
-        Plane plane = (Plane) o;
-        return maxSpeed == plane.maxSpeed &&
-                maxFlightDistance == plane.maxFlightDistance &&
-                maxLoadCapacity == plane.maxLoadCapacity &&
-                Objects.equals(planeModel, plane.planeModel);
+    public boolean equals(Object plane) {
+        if (this == plane) return true;
+        if (!(plane instanceof Plane)) return false;
+        Plane currentPlane = (Plane) plane;
+        return maxSpeed == currentPlane.maxSpeed &&
+                maxFlightDistance == currentPlane.maxFlightDistance &&
+                maxLoadCapacity == currentPlane.maxLoadCapacity &&
+                Objects.equals(planeModel, currentPlane.planeModel);
     }
 
     @Override
