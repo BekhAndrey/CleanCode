@@ -19,6 +19,9 @@ public class ExperimentalPlane extends Plane{
     public ClassificationLevel getClassificationLevel(){
         return classificationLevel;
     }
+    public ExperimentalPlaneType getExperimentalType(){
+        return experimentalType;
+    }
 
     @Override
     public boolean equals(Object plane) {
@@ -26,7 +29,8 @@ public class ExperimentalPlane extends Plane{
         if (!(plane instanceof ExperimentalPlane)) return false;
         if (!super.equals(plane)) return false;
         ExperimentalPlane currentPlane = (ExperimentalPlane) plane;
-        return experimentalType == currentPlane.experimentalType;
+        return experimentalType == currentPlane.experimentalType
+                && classificationLevel == currentPlane.classificationLevel;
     }
 
     @Override
@@ -34,8 +38,9 @@ public class ExperimentalPlane extends Plane{
 
     @Override
     public String toString() {
-        return "experimentalPlane{" +
-                "model='" + planeModel + '\'' +
-                '}';
+        return super.toString().replace("}",
+                ", experimentalType=" + experimentalType +
+                        ", classificationLevel=" + classificationLevel +
+                        '}');
     }
 }
