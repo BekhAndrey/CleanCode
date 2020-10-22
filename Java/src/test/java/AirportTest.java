@@ -32,9 +32,7 @@ public class AirportTest {
     );
 
     private static PassengerPlane planeWithMaxPassengerCapacity = new PassengerPlane("Boeing-747", 980, 16100, 70500, 242);
-
-
-    //----------------------Остановился здесь----------------------
+    
     @Test
     public void testGetTransportMilitaryPlanesList() {
         Airport airport = new Airport(planes);
